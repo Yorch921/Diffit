@@ -1,6 +1,3 @@
-import { redirect } from 'next/navigation'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
 import { AdminNav } from '@/components/admin-nav'
 
 export default async function AdminLayout({
@@ -8,16 +5,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
-
-  if (!session) {
-    redirect('/login')
-  }
-
-  if (session.user.role === 'CLIENT') {
-    redirect('/dashboard')
-  }
-
+  // Sin verificación de autenticación - acceso directo
   return (
     <div className="min-h-screen bg-gray-50">
       <AdminNav />

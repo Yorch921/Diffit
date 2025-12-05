@@ -1,5 +1,3 @@
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
@@ -42,13 +40,11 @@ const menuItems = [
 ]
 
 export default async function DashboardPage() {
-  const session = await getServerSession(authOptions)
-
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Bienvenido, {session?.user.name}
+          Bienvenido a Diffit
         </h1>
         <p className="mt-2 text-gray-600">
           Selecciona una opción para comenzar
@@ -69,6 +65,15 @@ export default async function DashboardPage() {
             </Card>
           </Link>
         ))}
+      </div>
+
+      <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+        <p className="text-sm text-blue-900">
+          💡 <strong>Modo Demo:</strong> La autenticación está deshabilitada. Para ver el panel de administración, ve a{' '}
+          <Link href="/admin" className="underline font-semibold">
+            /admin
+          </Link>
+        </p>
       </div>
     </div>
   )
