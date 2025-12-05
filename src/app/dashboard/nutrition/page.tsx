@@ -1,23 +1,11 @@
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
-import { prisma } from '@/lib/prisma'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatDate } from '@/lib/utils'
 import Link from 'next/link'
 
 export default async function NutritionPage() {
-  const session = await getServerSession(authOptions)
-
-  const nutritionPlans = await prisma.nutritionPlan.findMany({
-    where: {
-      userId: session!.user.id,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  })
-
-  const activePlan = nutritionPlans.find((plan) => plan.isActive)
+  // Datos de ejemplo sin base de datos
+  const nutritionPlans: any[] = []
+  const activePlan = null
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -74,42 +62,14 @@ export default async function NutritionPage() {
             <h3 className="text-xl font-semibold mb-2">
               No tienes un plan nutricional activo
             </h3>
-            <p className="text-gray-600">
-              Contacta con tu entrenador para obtener tu plan personalizado
+            <p className="text-gray-600 mb-4">
+              En modo demo sin base de datos configurada
+            </p>
+            <p className="text-sm text-gray-500">
+              Configura la base de datos para ver tus planes nutricionales
             </p>
           </CardContent>
         </Card>
-      )}
-
-      {nutritionPlans.length > 1 && (
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4">Planes Anteriores</h2>
-          <div className="space-y-4">
-            {nutritionPlans
-              .filter((plan) => !plan.isActive)
-              .map((plan) => (
-                <Card key={plan.id}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{plan.title}</CardTitle>
-                    <CardDescription>
-                      {formatDate(plan.startDate)}
-                      {plan.endDate && ` - ${formatDate(plan.endDate)}`}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <a
-                      href={plan.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Ver plan
-                    </a>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
-        </div>
       )}
     </div>
   )

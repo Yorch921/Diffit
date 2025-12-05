@@ -34,9 +34,10 @@ export default function WeightPage() {
     try {
       const response = await fetch('/api/weight')
       const data = await response.json()
-      setEntries(data)
+      setEntries(Array.isArray(data) ? data : [])
     } catch (error) {
       console.error('Error fetching weight entries:', error)
+      setEntries([])
     } finally {
       setLoading(false)
     }
