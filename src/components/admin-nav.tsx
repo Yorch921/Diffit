@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 
@@ -44,10 +43,12 @@ export function AdminNav() {
               ))}
             </div>
           </div>
-          <div className="flex items-center">
-            <Button variant="ghost" onClick={() => signOut({ callbackUrl: '/login' })}>
-              Cerrar Sesión
-            </Button>
+          <div className="flex items-center gap-2">
+            <Link href="/dashboard">
+              <Button variant="outline" size="sm">
+                Vista Cliente
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
