@@ -19,9 +19,23 @@ Aplicación completa para gestionar entrenamiento y nutrición de clientes, dise
   - Resumen de progreso mensual
 
 ### Para Entrenadores:
-- 👥 **Panel de Administración**: Vista general de todos los clientes
-- 📝 **Gestión de Planes**: Creación y asignación de dietas y entrenamientos
-- 📈 **Seguimiento**: Monitoreo del progreso de clientes
+- 👥 **Gestión de Clientes**:
+  - Vista general de todos los clientes
+  - Creación de nuevas cuentas de cliente
+  - Vista detallada con progreso completo de cada cliente
+- 💪 **Planes de Entrenamiento**:
+  - Creación de planes personalizados
+  - Configuración de semanas y sesiones
+  - Gestión de ejercicios con descripciones y videos
+  - Asignación automática a clientes
+- 🥗 **Planes Nutricionales**:
+  - Subida de PDFs con planes de alimentación
+  - Gestión de planes activos e históricos
+  - Asignación directa a clientes
+- 📊 **Monitoreo de Progreso**:
+  - Gráficos de evolución de peso
+  - Historial de entrenamientos completados
+  - Visualización de archivos y fotos de progreso
 
 ## 🚀 Stack Tecnológico
 
@@ -175,6 +189,7 @@ La aplicación tiene 3 roles:
 
 ### ✅ Completadas
 
+**Panel de Cliente:**
 - [x] Sistema de autenticación con NextAuth
 - [x] Dashboard de cliente con menú principal
 - [x] Visualización de plan nutricional (PDF)
@@ -187,36 +202,65 @@ La aplicación tiene 3 roles:
 - [x] Gráfico de evolución de peso
 - [x] Subida y gestión de archivos/fotos
 - [x] Estadísticas con calendario de sesiones
-- [x] Panel básico de administración
+
+**Panel de Administración:**
+- [x] Gestión completa de clientes (crear, ver, editar)
+- [x] Creación de planes de entrenamiento personalizados
+- [x] Configuración de semanas y sesiones
+- [x] Gestión de ejercicios con videos y descripciones
+- [x] Subida de planes nutricionales en PDF
+- [x] Vista detallada de progreso de clientes
+- [x] Gráficos de evolución en panel de admin
 - [x] Sistema de almacenamiento de archivos
+- [x] Navegación optimizada para admin
 
-### 🔄 En Desarrollo
+### 🔄 Próximas Funcionalidades
 
-- [ ] Panel completo de administración para entrenadores
-- [ ] Creación de planes de entrenamiento desde admin
-- [ ] Subida de planes nutricionales desde admin
 - [ ] Sistema de notificaciones push
+- [ ] Recordatorios automáticos de entrenamiento
+- [ ] Solicitud de fotos cada 4 semanas
 - [ ] Integración con Google Drive
-- [ ] Recordatorios automáticos
 - [ ] Modo responsive optimizado para móvil
+- [ ] Aplicación web progresiva (PWA)
+- [ ] Exportación de informes en PDF
+- [ ] Chat entre entrenador y cliente
 
-## 🚧 Próximas Funcionalidades
+## 🚧 Roadmap de Funcionalidades
 
-1. **Panel de Administración Completo**
-   - Crear/editar planes de entrenamiento
-   - Subir planes nutricionales
-   - Asignar planes a clientes
-   - Ver progreso detallado de clientes
-
-2. **Sistema de Notificaciones**
-   - Recordatorios de entrenamiento
+### Fase 1: Notificaciones y Comunicación ✨
+1. **Sistema de Notificaciones**
+   - Recordatorios automáticos de entrenamiento
    - Solicitud de fotos cada 4 semanas
-   - Notificaciones de nuevos planes
+   - Notificaciones de nuevos planes asignados
+   - Recordatorios de pesaje
 
-3. **Mejoras de UX**
+2. **Chat y Comunicación**
+   - Chat directo entre entrenador y cliente
+   - Sistema de mensajería
+   - Notificaciones en tiempo real
+
+### Fase 2: Mejoras de UX y Mobile 📱
+1. **Optimización Móvil**
+   - Diseño responsive mejorado
    - Aplicación web progresiva (PWA)
-   - Modo offline
-   - Optimización móvil
+   - Modo offline para consultar planes
+   - Instalación como app en dispositivos móviles
+
+2. **Mejoras de Interfaz**
+   - Animaciones y transiciones
+   - Modo oscuro
+   - Temas personalizables
+
+### Fase 3: Integraciones y Exportación 🔗
+1. **Integraciones**
+   - Google Drive para backup automático
+   - Integración con wearables (Fitbit, Garmin)
+   - Importación de datos de otras apps
+
+2. **Reportes y Análisis**
+   - Exportación de informes en PDF
+   - Gráficos avanzados de progreso
+   - Comparativas y análisis de tendencias
 
 ## 🐛 Solución de Problemas
 
